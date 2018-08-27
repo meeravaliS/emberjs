@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 ">
+            <h4 class="white">Price Filter</h4>
+            <p>
+                <button type="button" class="btn btn-default btn-xs" {{action "toRoute" 'lt'}}> &lt; 2500 </button>
+                <button type="button" class="btn btn-default btn-xs" {{action "toRoute" 'gt'}}> &gt; 2500</button>
+            </p>
+        </div>
+        <div class="col-md-9 ">
+            {{#ember-sortable-table class="table table-condensed table-bordered"}}
+            <thead>
+                <tr>
+                    <th colspan="2">Airline</th>
+                    <th>Depart</th>
+                    <th>Arrive</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data as |item|}}
+                <tr style="font-weight: bold">
+                    <td>
+                        <img src="../img/{{item.airline}}.png" height="50">
+                    </td>
+                    <td>{{item.airline}}</td>
+                    <td>{{item.departure}}</td>
+                    <td>{{item.arrive}}</td>
+                    <td>{{item.duration}}</td>
+                    <td>{{item.price}} $
+                        <br> {{#link-to "book" item.id class="btn btn-success btn-sm" tagName="button"}} Book {{/link-to}}
+                    </td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="5">No Flights</td>
+                </tr>
+                {{/each}}
+            </tbody>
+            {{/ember-sortable-table}}
+        </div>
+    </div>
+</div>

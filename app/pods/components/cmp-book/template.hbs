@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-8 column nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#a" data-toggle="tab">Itinerary</a>
+                </li>
+                <li>
+                    <a href="#b" data-toggle="tab">Travellers</a>
+                </li>
+                <li>
+                    <a href="#c" data-toggle="tab">Payment</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="a">
+                    <label style="color: white">Flight Details</label>
+                    <table class="table table-condensed table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Airline</th>
+                                <th>Depart</th>
+                                <th>Arrive</th>
+                                <th>Duration</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{data.airline}}</td>
+                                <td>{{data.departure}}</td>
+                                <td>{{data.arrive}}</td>
+                                <td>{{data.duration}}</td>
+                                <td>{{data.price}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane" id="b">
+                    <label style="color: white">Traveller Details</label>
+                    <table class="table table-condensed table-bordered">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Lasr Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="text" class="form-control" placeholder="First name">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control " placeholder="Last name">
+                                </td>
+                                <td>
+                                    <input type="email" class="form-control  " placeholder="Email">
+                                </td>
+                                <td>
+                                    <input type="tel" class="form-control " placeholder="Contact">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane" id="c">
+                    <label style="color: white">Payment Details</label>
+                    <br> {{#link-to "success" class="btn btn-primary"}} Book ticket {{/link-to}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

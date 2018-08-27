@@ -1,0 +1,52 @@
+<div class="register-box">
+    <div class="register-box-body custom-box-bg">
+        <p class="login-box-msg">Search Flights</p>
+        <form action="./search-flights.html" method="post">
+            <div class="form-group">
+                <label class="white">
+                    {{input-custom type="radio" class="flat-red" name="travel_type" value="oneway" change=(action (mut notRoundTrip) true) checked=notRoundTrip}}
+                    ONE WAY
+                </label> &nbsp;
+                <label class="white">
+                    {{input type="radio" class="flat-red" name="travel_type" value="roundtrip" change=(action (mut notRoundTrip) false)}} ROUND
+                    TRIP
+                </label>
+            </div>
+            <div class="form-group has-feedback">
+                {{#power-select options=data class="form-control air-dep" required=true placeholder="Departure City" title="Departure City"
+                selected=filter.from onchange=(action (mut filter.from)) as |places| }} {{places.name}} {{/power-select}}
+                <span class=" glyphicon glyphicon-plane form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                {{#power-select options=data class="form-control" placeholder="Destination City" title="Destination City" selected=filter.to
+                onchange=(action (mut filter.to)) as |places| }} {{places.name}} {{/power-select}}
+                <span class="glyphicon glyphicon-plane form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                {{pikaday-input format="MM/DD/YYYY" onSelection=(action (mut filter.on) value=target.value) class="form-control" placeholder="Depart"
+                title="Depart" useUTC=true}}
+                <span class="glyphicon glyphicon-calendar form-control-feedback" title="Depart"></span>
+            </div>
+            <div class="form-group has-feedback">
+                {{pikaday-input format="MM/DD/YYYY" placeholder="Return" title="Return" onSelection=(action (mut filter.return) value=target.value)
+                class="form-control" disabled=notRoundTrip useUTC=true}}
+                <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-xs-12">
+                    <button class="btn btn-primary btn-block btn-flat" {{action 'toResult'}}>Search Flights</button>
+                </div>
+                <!-- /.col -->
+            </div>
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-xs-12">
+                    <p class="required-msg">Fill All Details</p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- /.form-box -->
+</div>
+<!-- /.register-box -->

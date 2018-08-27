@@ -1,0 +1,48 @@
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.custom-bg {
+  background: url('../img/1.jpg') no-repeat 0px 0px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.custom-box-bg {
+  background: rgba(3, 3, 3, 0.14);
+}
+
+.ember-power-select-trigger {
+  height: 34px;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow: visible;
+}
+.ember-power-select-status-icon{
+  border-color:transparent;
+}
+
+.ember-power-select-placeholder {
+  height: 34px;
+  padding-top: 0;
+}
+
+.required-msg{
+  color: red;
+  display: none;
+}
+.required-msg.show{
+  color: red;
+  display: block;
+}
+
+.white{
+  color: white;
+}

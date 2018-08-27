@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" style="background:rgba(3, 3, 3, 0.14) ">
+    {{#link-to "home" class="navbar-brand"}}
+    <span style="font-size: xx-large;" title="Home">
+        <b>airTicket</b>
+    </span>
+    <span class="glyphicon glyphicon-plane"></span>
+    {{/link-to}} {{!-- logout --}} {{#if session.isAuthenticated}}
+    <a {{action 'invalidateSession'}} title="Logout">
+        <span style="padding: 15px;font-size: large;cursor: pointer" class="glyphicon glyphicon-log-out pull-right"></span>
+    </a>
+    {{/if}}
+</nav>
+<div class="main">
+    {{outlet}}
+</div>

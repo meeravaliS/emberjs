@@ -1,8 +1,9 @@
 'use strict';
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'book-trip',
+    modulePrefix: 'air-ticket',
+    podModulePrefix: 'air-ticket/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -21,6 +22,14 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
+  };
+  ENV['ember-simple-auth'] = {
+    // authenticationRoute: 'sign-in'
+    authenticationRoute: 'login',
+    routeAfterAuthentication: 'home',
+    routeIfAlreadyAuthenticated: 'home',
+    baseURL: '/home',
+
   };
 
   if (environment === 'development') {
